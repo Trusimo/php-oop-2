@@ -1,16 +1,32 @@
 <?php
-class Products {
+class Prodotti {
+    protected $prezzo;
+    protected $tagliaAnimale;
+    protected $sconto = 0;
 
+    function setSconto() {
+        // se la nuova mail è presente nel database
+        if (array_key_exists("newUserEmail", "emailDB")) {
+            // allora c'è lo sconto
+            $this->sconto = 20;
+        }
+    }
 }
 
-class Food extends Products {
-
+class Cibo extends Prodotti {
+    protected $scadenza;
+    protected $carne;
+    protected $pesce;
 }
 
-class Accessories extends Products {
-    
+class Accessori extends Prodotti {
+    protected $giocattoli;
+    protected $cucce;
+    protected $collari;
 }
 
-class Health extends Products {
-    
+class Cura extends Prodotti {
+    protected $pulizia;
+    protected $curaPelo;
+    protected $antipulci;
 }
